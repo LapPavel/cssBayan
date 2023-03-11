@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: beige;
+    overflow-y: overlay;
+}
+
+.container {
+    margin:0 auto;
+    max-width: 65rem;
+    min-width: 19rem;
+}
+
+    .container h1 {
+        font-size: 1.5rem;
+    }
+
+    .radio-container {
+        display: flex;
+        flex-direction: column;
+        border: solid gray;
+        border-width: 0.13rem 0 0;
+        margin-bottom: 0.5rem;
+    }
+
+        .radiobox {
+            appearance: none;		
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: blue;
+            cursor: pointer;
+        }
+        
+        span {
+            align-self: normal;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+        }
+        
+            .arrow {
+                opacity: 0;
+                border: solid black;
+                border-width: 0 0.25rem 0.25rem 0;
+                display: inline-block;
+                padding: 0.25rem;
+                transform: rotate(-45deg);
+                transition: transform .5s ease;
+            }
+        
+        img {
+            opacity: 0;
+            max-height: 0;
+            width: auto;
+            transition: .8s ease;
+        }
+    
+    .radiobox:checked ~ label > img {
+        opacity: 1;
+        max-height: min(70vw, 30rem);
+    }
+
+    .radiobox:checked ~ label {
+        color: black;
+    }
+
+    .radiobox:active ~ label span,
+    .radiobox:active ~ label .arrow {
+        color: cornflowerblue;
+        border-color: cornflowerblue;
+    }
+
+    .radiobox:checked ~ label .arrow {
+        transform: rotate(45deg);
+    }
+
+@media (hover: hover) and (pointer: fine) {
+
+    .radiobox:hover ~ label > img {
+        opacity: 1;
+        max-height: min(70vw, 30rem);
+    }
+
+    .container:hover label {
+        color: black;
+    }
+
+    .container:hover .arrow {
+        opacity: 1;
+    }
+
+    .radiobox:hover ~ label .arrow {
+        transform: rotate(45deg);
+    }
+}
+
+@media (min-width: 426px) and (max-width: 820px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 821px) {
+    .container h1 {
+        font-size: 2.5rem;
+    }
+
+    span {
+        font-size: 1.5rem;
+    }
+}
