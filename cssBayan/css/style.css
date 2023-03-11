@@ -62,10 +62,9 @@ body {
             transition: .8s ease;
         }
     
-    .radiobox:checked ~ label > img,
-    img:hover {
+    .radiobox:checked ~ label > img {
         opacity: 1;
-        max-height: 28vh;
+        max-height: min(70vw, 30rem);
     }
 
     .radiobox:checked ~ label {
@@ -82,11 +81,11 @@ body {
         transform: rotate(45deg);
     }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
 
     .radiobox:hover ~ label > img {
         opacity: 1;
-        max-height: 50vh;
+        max-height: min(70vw, 30rem);
     }
 
     .container:hover label {
@@ -110,11 +109,6 @@ body {
     span {
         font-size: 1.25rem;
     }
-
-    .radiobox:checked ~ label > img,
-    img:hover {
-        max-height: 37vh;
-    }
 }
 
 @media (min-width: 821px) {
@@ -124,10 +118,5 @@ body {
 
     span {
         font-size: 1.5rem;
-    }
-
-    .radiobox:checked ~ label > img,
-    img:hover {
-        max-height: 50vh;
     }
 }
