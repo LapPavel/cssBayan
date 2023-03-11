@@ -58,7 +58,7 @@ body {
         img {
             opacity: 0;
             max-height: 0;
-            width: fit-content;
+            width: auto;
             transition: .8s ease;
         }
     
